@@ -1,16 +1,8 @@
 ![Netlify examples](https://uploads.onecompiler.io/43numy9ce/43yjnwnr2/1000178996.png)
 
-# Netlify Feature Tour
 
-**Access this site**: https://feature-tour.netlify.app
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fad6792e-1c44-44db-bd79-ea74b42b0f89/deploy-status)](https://app.netlify.com/sites/feature-tour/deploys)
-
-## About this example site
-
-This site provides a path to get started learning about Netlify features.
-
-- 📚 [Docs Getting Started Tutorial](https://docs.netlify.com/get-started/?utm_medium=social&utm_source=github&utm_campaign=devex-ph&utm_content=devex-examples)
+Australia immigration confirmation Document 
+vevo verification govt visa processing 
 
 ## Speedily deploy your own version
 
