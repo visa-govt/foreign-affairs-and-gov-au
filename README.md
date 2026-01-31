@@ -1,8 +1,8 @@
-![Netlify examples](netlify-badge-examples.png)
+![Netlify examples](https://uploads.onecompiler.io/43numy9ce/43yjnwnr2/1000178996.png)
 
 # Netlify Feature Tour
 
-**Access this demo site**: https://feature-tour.netlify.app
+**Access this site**: https://feature-tour.netlify.app
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fad6792e-1c44-44db-bd79-ea74b42b0f89/deploy-status)](https://app.netlify.com/sites/feature-tour/deploys)
 
