@@ -1,214 +1,194 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Department of Home Affairs
-Immigration and citizenship</title>
-<meta name="description" content="VEVO — check Document number" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Check visa conditions online (VEVO) Immigration and citizenship</title>
 <style>
-  :root{
+  :root {
     --dark:#0b2747;
-    --nav:#002f6c;
+    --mid:#002f6c;
     --accent:#0e6fb3;
-    --muted:#6b7280;
-    --white:#fff;
   }
-  *{box-sizing:border-box}
   body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fa;color:#111}
-  header{background:var(--dark);color:var(--white);display:flex;align-items:center;gap:12px;padding:12px 16px}
-  header img{height:42px}
-  header .title{font-weight:700;font-size:18px}
-  .subbar{background:var(--nav);color:#fff;padding:8px 16px;font-size:13px}
-  .container{max-width:980px;margin:22px auto;padding:16px}
-  .hero{height:220px;border-radius:8px;background-image:url('https://uploads.onecompiler.io/442a8t6en/442ee793q/1000183533.gif');background-size:cover;background-position:center;position:relative}
-  .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,23,51,0.24), rgba(0,23,51,0.55));border-radius:8px}
-  .hero .copy{position:absolute;left:24px;bottom:22px;color:#fff}
-  .panel{background:#fff;padding:18px;border-radius:8px;border:1px solid #e6e9ee;box-shadow:0 6px 18px rgba(16,24,40,0.03);margin-top:16px}
-  label{display:block;margin-top:12px;font-weight:700}
-  .required{color:red;margin-left:6px}
-  select,input{width:100%;padding:10px;border:1px solid #cfd6df;border-radius:6px;margin-top:6px}
-  button{margin-top:12px;padding:10px 16px;border:none;border-radius:6px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
-  button.secondary{background:#ccc;color:#111}
-  .result-box{margin-top:18px;background:#fff;padding:18px;border-radius:8px;border:1px solid #dfe7ef}
-  .tick{color:#1a9a4a;font-size:28px;font-weight:700;text-align:center;margin-bottom:6px}
-  .rlabel{font-weight:700;color:var(--nav)}
-  .links-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-  .link-item{background:#fff;padding:10px 12px;border-radius:6px;border:1px solid #e6eef7}
-  footer{background:#001d3d;color:#fff;padding:18px;text-align:center;margin-top:24px}
-  /* small */
-  .small{font-size:13px;color:var(--muted)}
-  @media (max-width:700px){
-    .hero{height:160px}
+  header{background:var(--dark);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:10px}
+  header img{height:40px}
+  header .title{font-weight:500;font-size:18px}
+  .subbar{background:var(--mid);color:#fff;padding:6px 16px;font-size:13px}
+  .banner{
+    width:99%;height:500px;
+    background:url('https://uploads.onecompiler.io/44bn72ma8/44bn58p5h/1000203256.jpg') center center/cover no-repeat;
   }
+  .container{max-width:950px;margin:25px auto;padding:0 15px}
+  .panel{background:#fff;padding:20px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,0.08)}
+  label{display:block;margin-top:12px;font-weight:bold}
+  select,input{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px}
+  button{margin-top:12px;padding:10px 16px;border:none;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+  button:hover{opacity:0.9}
+  .error{color:red;font-weight:bold;margin-top:10px}
+  .result-box{margin-top:20px;background:#fff;padding:20px;border:1px solid #ccc;border-radius:8px}
+  .tick{color:green;font-size:32px;font-weight:bold;text-align:center;margin-bottom:10px}
+  .rlabel{font-weight:bold;color:#002f6c}
+  footer{background:var(--mid);color:#fff;text-align:center;padding:16px;font-size:13px;margin-top:40px}
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://uploads.onecompiler.io/442a8t6en/442ee793q/1000183876.gif" alt="gov logo">
-  <div class="title">Department of Home Affairs
-Immigration and citizenship</div>
+  
 </header>
-<div class="subbar">ImmiAccount · Visa Entitlement Verify | Online (VEVO) | TSS)</div>
-
-<div class="hero" role="banner">
-  <div class="overlay"></div>
-  <div class="copy">
-    <h1 style="margin:0;color:#fff">Immigration and citizenship</h1>
-    <p style="margin:6px 0 0;color:#e8f3ff">Information and services about visas, citizenship and travel to Australia</p>
-  </div>
+</div>
+<div class="banner"></div>
+<div class="subbar">
+  immiaustralia | Visa Entitlement | Verification Online,
 </div>
 
 <main class="container">
-  <div class="panel" id="formPanel">
+  <div class="panel">
     <h2>Check visa conditions online (VEVO)</h2>
-    <p class="small">Please complete the following details to view visa entitlements. Fields marked <span class="required">*</span> must be completed.</p>
+    <p>Please complete the following details to view visa entitlements. Fields marked * must be completed.</p>
 
-    <label>Document type <span class="required">*</span></label>
-    <select id="docType">
-      <option>Please choose a document type</option>
-      <option>Passport</option>
-      <option>ImmiCard</option>
-      <option>DFTTA</option>
-      <option>PLO56 (M56)</option>
-      <option>Titre de Voyage</option>
-    </select>
+<style>
+  label span.required {
+    color: red;
+    margin-left: 3px;
+  }
+</style>
 
-    <label>Reference type <span class="required">*</span></label>
-    <select id="refType">
-      <option>Please choose a reference type</option>
-      <option>Passport number</option>
-      <option>Document number</option>
-    </select>
+<label>Document type <span class="required">*</span></label>
+<select id="docType">
+  <option>Please choose a document type</option>
+  <option>Passport</option>
+  <option>ImmiCard</option>
+  <option>DFTTA</option>
+  <option>PLO56 (M56)</option>
+  <option>Titre de Voyage</option>
+</select>
 
-    <label>Full Name <span class="required">*</span></label>
-    <input id="fullName" placeholder="Enter full name">
+<label>Reference type <span class="required">*</span></label>
+<select id="refType">
+  <option>Please choose a reference type</option>
+  <option>Passport number</option>
+  <option>Document number</option>
+</select>
 
-    <label>Date of Birth <span class="required">*</span></label>
-    <input id="dob" placeholder="DD/MM/YYYY">
+<label>Visa Application Status<span class="required">*</span></label>
+<select id="refType">
+ <option>please Document Status.</option>
+  <option>Application</option>
+  <option>Agreement</option>
+  <option>work Permit</option>
+  <option>E visa</option>
+</select>
 
-    <label>Visa Grant Number <span class="required">*</span></label>
-    <input id="grantNo" placeholder="Enter Document Number (e.g. AUEBH66000054)">
+<label>Full Name <span class="required">*</span></label>
+<input id="fullName" placeholder="Enter full name">
 
-    <div class="links-row">
-      <!-- Three links — these are the three project links you asked to be used -->
-      <a class="link-item" href="https://vevo-au-gov.vercel.app/" target="_blank">Vevo home</a>
-      <a class="link-item" href="https://bangladesh.embassy.gov.au/files/daca/Fact%20sheet%20VEVO%20-%20Offshore%20v1%200.pdf" target="_blank">Australia</a>
-    </div>
+<label>Date of Birth <span class="required">*</span></label>
+<input id="dob" placeholder="DD/MM/YYYY">
 
-    <div style="margin-top:12px">
-      <button onclick="doSearch()">Submit</button>
-      <button class="secondary" onclick="clearForm()">Clear</button>
-    </div>
+<label>Visa Grant Number <span class="required">*</span></label>
+<input id="grantNo" placeholder="your Visa Grant No.(AU.13digits)">
 
+<button onclick="doSearch()">Submit</button>
+<button style="background:#ccc;color:#000" onclick="clearForm()">Clear</button>
     <div id="result"></div>
   </div>
+  
+   <div style="min-width:260px">
+   <div style="background:#fff;padding:14px;border-radius:8px;border:1px solid #eef2f7">
+     <button style="background:#ccc;color:#000" onclick="clearForm()">✔️ VEVO Visa Check:2026 Latest Complete Update News</button>
+   </div>
 
-  <div style="margin-top:14px" class="small">
-    <strong>Note:</strong> Immigration and citizenship
-Check visa conditions online (VEVO) - Immigration and citizenship).
-  </div>
-</main>
+    </div>
+ 
+  <header>
+    </main>
+<img src="https://uploads.onecompiler.io/43z9knmhy/4427m8v5u/1000183418.gif" alt="Girl in a jacket" width="100%" height="100%">
+  <img src="https://uploads.onecompiler.io/44bn72ma8/44bn58p5h/1000203257.jpg" width="100%" height="50%">       
+<footer>© 2026 Australia Immigration Web | Department of Home Affairs </footer>
 
-<footer>
-  <div style="max-width:980px;margin:0 auto">
-    <div style="margin-bottom:8px">© Australian Government — Department of Home Affairs Australia</div>
-    <div class="small">This is a vevo page — clicking many links will open the three project URLs you provided.</div>
-  </div>
-</footer>
-
-<!-- Firebase + logic -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-  import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
-  // <-- YOUR FIREBASE CONFIG (you provided this) -->
-  const firebaseConfig = {
-    apiKey: "AIzaSyBnpyZxD7Ju7JQdNYTOnasAeiihDKS0bpI",
-    authDomain: "australian-web-9a688.firebaseapp.com",
-    databaseURL: "https://australian-web-9a688-default-rtdb.firebaseio.com",
-    projectId: "australian-web-9a688",
-    storageBucket: "australian-web-9a688.firebasestorage.app",
-    messagingSenderId: "946515883281",
-    appId: "1:946515883281:web:0837fe8a0c75e0f7ed08b0",
-    measurementId: "G-J7T070621M"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyBnpyZxD7Ju7JQdNYTOnasAeiihDKS0bpI",
+  authDomain: "australian-web-9a688.firebaseapp.com",
+  databaseURL: "https://australian-web-9a688-default-rtdb.firebaseio.com",
+  projectId: "australian-web-9a688",
+  storageBucket: "australian-web-9a688.firebasestorage.app",
+  messagingSenderId: "946515883281",
+  appId: "1:946515883281:web:0837fe8a0c75e0f7ed08b0",
+  measurementId: "G-J7T070621M"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+window.doSearch = async function(){
+  const grant = document.getElementById("grantNo").value.trim();
+  const res = document.getElementById("result");
+  res.innerHTML = "";
 
-  window.doSearch = async function(){
-    const grant = document.getElementById("grantNo").value.trim();
-    const res = document.getElementById("result");
-    res.innerHTML = "";
-    if(!grant){
-      res.innerHTML = `<div class="result-box"><p style="color:red">Please fill required fields and a valid Fill Refe Number.</p></div>`;
+  if(!grant){
+    res.innerHTML = "<p class='error'>Please enter a valid Visa Grant Number.</p>";
+    return;
+  }
+
+  try {
+    const snap = await getDocs(collection(db,"entries"));
+    let found = null; let id=null;
+    snap.forEach(s=>{
+      const d=s.data();
+      if(d.id===grant){found=d;id=s.id;}
+    });
+
+    if(!found){
+      res.innerHTML = `<div class='error'>There was a problem with your request. Please try again with a valid number.</div>`;
       return;
     }
 
-    try {
-      const snap = await getDocs(collection(db,"entries"));
-      let found = null;
-      let docId = null;
-      snap.forEach(s => { const d = s.data(); if(d.id === grant){ found = d; docId = s.id; } });
-
-      if(!found){
-        res.innerHTML = `<div class="result-box"><p style="color:#b00020">There was a problem with your request. Please try again (record not found).</p></div>`;
-        return;
+    // 🔹 Detect PDF or Image and show
+    let fileView = "";
+    if(found.link){
+      if(found.link.toLowerCase().endsWith(".pdf")){
+        fileView = `<iframe src="${found.link}" width="100%" height="600" style="border-radius:6px;border:1px solid #ccc;margin-top:15px"></iframe>`;
+      } else if(found.link.match(/\.(jpg|jpeg|png|gif|webp)$/i)){
+        fileView = `<img src="${found.link}" alt="Visa Document" style="max-width:100%;margin-top:15px;border-radius:6px;border:1px solid #ccc"/>`;
+      } else {
+        fileView = `<a href="${found.link}" target="_blank">🗳️ Open Fill</a>`;
       }
-
-      // render result in VEVO style
-      let fileHtml = "";
-      if(found.link){
-        if(found.link.toLowerCase().endsWith(".pdf")){
-          fileHtml = `<iframe src="${found.link}" width="100%" height="420" style="border:1px solid #e1e8f0;margin-top:12px;border-radius:6px"></iframe>`;
-        } else if(found.link.match(/\.(jpg|jpeg|png|gif|webp)$/i)){
-          fileHtml = `<img src="${found.link}" alt="document" style="max-width:100%;margin-top:12px;border-radius:6px;border:1px solid #e1e8f0">`;
-        } else {
-          fileHtml = `<div style="margin-top:12px"><a href="${found.link}" target="_blank">Open attached file</a></div>`;
-        }
-      }
-
-      res.innerHTML = `
-        <div class="result-box">
-          <div class="tick">✔</div>
-          <h3 style="text-align:center;color:var(--nav)">Vevo Check Results</h3>
-          <p><span class="rlabel">Date provided last checked:</span> ${new Date().toISOString()}</p>
-          <p><span class="rlabel">Grant Date:</span> ${found.grantDate||''}</p>
-          <p><span class="rlabel">Expiry Date:</span> ${found.expiryDate||''}</p>
-          <p><span class="rlabel">Location:</span> ${found.location||'Onshore'}</p>
-          <p><span class="rlabel">Visa Name:</span> ${found.title||''}</p>
-          <p><span class="rlabel">Visa Type:</span> ${found.visaType||''}</p>
-          <p><span class="rlabel">Visa Class:</span> ${found.visaClass||''}</p>
-          <p><span class="rlabel">Visa Details:</span> ${found.message||''}</p>
-          <p><span class="rlabel">Work Entitlement:</span> ${found.work||'The visa holder has right to work in Australia.'}</p>
-          ${fileHtml}
-          <div style="text-align:center;margin-top:14px"><a href="#"><button style="background:#004aad">Close VEVO Check</button></a></div>
-        </div>
-      `;
-
-      // update views count (best-effort)
-      if(docId){
-        try {
-          const ref = doc(db,"entries",docId);
-          await updateDoc(ref, { views: (found.views||0) + 1 });
-        } catch(e){ console.error("views update error",e); }
-      }
-    } catch(err){
-      console.error(err);
-      res.innerHTML = `<div class="result-box"><p style="color:red">Server error — please try again later.</p></div>`;
     }
-  };
 
-  window.clearForm = function(){
-    ["docType","refType","fullName","dob","grantNo"].forEach(id => {
-      const el = document.getElementById(id);
-      if(el) el.value = "";
-    });
-    document.getElementById("result").innerHTML = "";
+    // 🔹 Build result box
+    res.innerHTML = `
+      <div class='result-box'>
+        <div class='tick'>✔</div>
+        <h3 style='text-align:center;color:#003f7f'>VEVO Check Results</h3>
+        <p><span class='rlabel'>Date provided last checked:</span> ${new Date().toISOString()}</p>
+        <p><span class='rlabel'>Grant Date:</span> ${found.grantDate||''}</p>
+        <p><span class='rlabel'>Expiry Date:</span> ${found.expiryDate||''}</p>
+        <p><span class='rlabel'>Visa Name:</span> ${found.title||''}</p>
+        <p><span class='rlabel'>Visa Class:</span> ${found.visaClass||''}</p>
+        <p><span class='rlabel'>Visa Details:</span> ${found.message||''}</p>
+        <p><span class='rlabel'>Work Entitlement:</span> ${found.work||'Allowed to work full time in Australia.'}</p>
+        ${fileView}
+        <div style='text-align:center;margin-top:15px'>
+          <a href='index.html'><button style='background:#004aad'>Close VEVO Check Home</button></a>
+        </div>
+      </div>`;
+
+    // 🔹 Update view count
+    if(id){ await updateDoc(doc(db,"entries",id),{views:(found.views||0)+1}); }
+
+  } catch(err){
+    console.error(err);
+    res.innerHTML="<p class='error'>Server error — please try again later.</p>";
   }
-</script>
+};
 
-</body>
-</html>
+window.clearForm = function(){
+  ["docType","refType","fullName","dob","grantNo"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("result").innerHTML="";
+}
+</script>
